@@ -4,7 +4,8 @@ const hamburgerOpen = document.querySelector(".hamburger__open");
 const hamburgerClose = document.querySelector(".hamburger__close");
 const mobileNav = document.querySelector(".page1__mobile__nav");
 const faqContainer = document.querySelector(".page6__faq__container");
-const plusButton = document.querySelector(".plus ");
+// const plusButton = document.querySelectorAll(".plus ");
+const faqAnswer = document.querySelectorAll(".page6__faq--answer");
 
 const faqQuestion = document.querySelectorAll(".page6__faq--question");
 
@@ -92,18 +93,29 @@ navToggle();
 
 function faqToggle() {
   faqQuestion.forEach((qsn) => {
-    console.log("hello");
     qsn.addEventListener("click", () => {
       const answer = qsn.nextElementSibling;
-      const height = answer.scrollHeight;
+      const plus = qsn.querySelector(".plus");
+
+      // Collapse all other answers
+      faqAnswer.forEach((ans) => {
+        if (ans !== answer) {
+          ans.style.height = "0px";
+          ans.previousElementSibling.querySelector(".plus").style.transform =
+            "rotate(0deg)";
+        }
+      });
+
+      // Toggle the clicked answer
       if (answer.style.height === "0px" || answer.style.height === "") {
-        answer.style.height = height + "px";
-        plusButton.style.transform = "rotate(45deg)";
+        answer.style.height = answer.scrollHeight + "px";
+        plus.style.transform = "rotate(45deg)";
       } else {
         answer.style.height = "0px";
-        plusButton.style.transform = "rotate(0deg)";
+        plus.style.transform = "rotate(0deg)";
       }
     });
   });
 }
+
 faqToggle();
