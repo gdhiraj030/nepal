@@ -8,21 +8,6 @@ const plusButton = document.querySelector(".plus ");
 
 const faqQuestion = document.querySelectorAll(".page6__faq--question");
 
-faqQuestion.forEach((qsn) => {
-  console.log("hello");
-  qsn.addEventListener("click", () => {
-    const answer = qsn.nextElementSibling;
-    const height = answer.scrollHeight;
-    if (answer.style.height === "0px") {
-      answer.style.height = height + "px";
-      plusButton.style.transform = "rotate(45deg)";
-    } else {
-      answer.style.height = "0px";
-      plusButton.style.transform = "rotate(0deg)";
-    }
-  });
-});
-
 function smoothScroll() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -102,4 +87,23 @@ function navToggle() {
     });
   });
 }
+
 navToggle();
+
+function faqToggle() {
+  faqQuestion.forEach((qsn) => {
+    console.log("hello");
+    qsn.addEventListener("click", () => {
+      const answer = qsn.nextElementSibling;
+      const height = answer.scrollHeight;
+      if (answer.style.height === "0px" || answer.style.height === "") {
+        answer.style.height = height + "px";
+        plusButton.style.transform = "rotate(45deg)";
+      } else {
+        answer.style.height = "0px";
+        plusButton.style.transform = "rotate(0deg)";
+      }
+    });
+  });
+}
+faqToggle();
