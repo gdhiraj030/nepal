@@ -5,13 +5,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
 
 <body>
   <div class="main">
     <section class="page1">
+      <div class="hamburger__open">
+        <img src="/images/menuopen.svg" alt="">
+      </div>
+      <div class="page1__mobile__nav">
+        <div class="hamburger__close">
+          <img src="/images/close-line.svg" alt="">
+        </div>
+        <div class="logo">logo</div>
+        <ul>
+          <li><a href="#section1">Home</a></li>
+          <li><a href="#section2">History</a></li>
+          <li><a href="#section3">Culture</a></li>
+          <li><a href="#section4">Contact</a></li>
+        </ul>
+      </div>
       <div class="page1__desktop__nav">
         <div class="logo">logo</div>
         <ul>
@@ -28,7 +43,6 @@
         <p>Discover the beauty of Nepal's rich history and culture</p>
         <button class="page1__hero__button">explore</button>
       </div>
-      <div class="hero_image"></div>
     </section>
     <section class="page2">
       <div class="page2__text">
@@ -282,13 +296,15 @@
 
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
       integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
       integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="./scripts/script.js"></script>
 </body>
 

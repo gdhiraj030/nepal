@@ -14,24 +14,49 @@ body {
   font-size: 16px;
   font-family: lufga;
   overflow-x: hidden;
-  /* background-color: red; */
 }
 
 .page1 {
   width: 100%;
-  height: auto;
+  height: 100vh;
   background-image: url(../images/heroimage.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /*👀   👀   👀    🤷‍♀️ NOT WORKING BACKGROUND FIXED ATTACHMENT🤷‍♂️   👀   👀   👀 */
+  /* background-attachment: fixed; */
   padding: 2rem 1rem;
   color: var(--white-color);
+  position: relative;
+}
+
+.page1__mobile__nav {
+  display: none;
+  position: relative;
 }
 .page1__desktop__nav {
+  padding: 0 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.hamburger__close {
+  display: none;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 1rem;
+  right: 2rem;
+  cursor: pointer;
+}
+.hamburger__open {
+  display: none;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 1rem;
+  right: 2rem;
+  cursor: pointer;
 }
 .page1__desktop__nav ul {
   display: flex;
@@ -50,6 +75,7 @@ body {
 }
 .logo {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .page1__hero__text {
@@ -73,6 +99,7 @@ body {
   background-color: var(--white-color);
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
 
   /* font-size: 0.5rem; */
 }
@@ -161,6 +188,7 @@ body {
   color: var(--white-color);
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .page4__secondbox {
@@ -266,21 +294,33 @@ body {
   font-weight: 400;
   padding: 1rem 0;
 }
+.page6__faq__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 .page6__faq {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* padding: 1rem 0; */
   padding-right: 8rem;
-  margin-bottom: 1.5rem;
+  /* padding-bottom: 0.5rem; */
 }
 .page6__faq--question {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* background-color: red; */
+  padding: 0.5rem 0;
+  cursor: pointer;
 }
 .page6__faq--question h2 {
   font-size: 1.5rem;
+}
+.plus {
+  transition: rotate 0.5s ease;
 }
 .plus img {
   width: 25px;
@@ -290,12 +330,18 @@ body {
 
 .page6__faq--answer {
   width: 60%;
-  padding: 0.5rem 0;
+  /* padding: 0.5rem 0; */
+  height: 0px;
+  transition: height 0.3s ease;
+  overflow: hidden;
 }
 .page6__faq--answer p {
   font-size: 1rem;
   font-weight: 400;
 }
+/* .plus img {
+  transform: rotate(45deg);
+} */
 
 /* PAGE-7 */
 .page7 {
@@ -328,6 +374,7 @@ body {
   background-color: var(--white-color);
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
 /* FOOTER */
@@ -373,16 +420,67 @@ body {
   body {
     font-size: 14px;
   }
+  .page1 {
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+    /* padding: 1px; */
+  }
   .page1__desktop__nav {
     display: none;
   }
-  .page1 {
-    height: auto;
-    text-align: center;
+  .page1__mobile__nav {
+    display: block;
   }
-  .page1__hero__text h1 {
-    font-size: 3rem;
+  .page1__mobile__nav {
+    background-color: var(--black-color);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transition: transform 0.8s ease-in-out; */
+    transform: translateX(100%);
+
+    /* padding: 1rem 0; */
   }
+  .page1__mobile__nav ul {
+    /* padding: 4rem 0; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom: 6rem;
+  }
+  .page1__mobile__nav ul li {
+    list-style: none;
+  }
+  .page1__mobile__nav ul li a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .page1__mobile__nav ul li a:hover {
+    transform: scale(1.2);
+  }
+  .logo {
+    /* background-color: red; */
+    text-align: left;
+    padding: 1rem 2rem;
+
+    font-size: 2rem;
+  }
+  .hamburger__open {
+    display: block;
+  }
+  .hamburger__close {
+    display: block;
+  }
+
   .page2 {
     height: auto;
     flex-direction: column;
