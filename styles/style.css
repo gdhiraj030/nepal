@@ -51,13 +51,7 @@ body {
 }
 .hamburger__open {
   display: none;
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  top: 1rem;
-  right: 2rem;
-  cursor: pointer;
-  z-index: 1;
+
 }
 .page1__desktop__nav ul {
   display: flex;
@@ -446,7 +440,7 @@ body {
     transform: translateX(100%);
 
     /* padding: 1rem 0; */
-    z-index: 3;
+    z-index: 7;
   }
   .page1__mobile__nav ul {
     /* padding: 4rem 0; */
@@ -478,7 +472,14 @@ body {
     font-size: 2rem;
   }
   .hamburger__open {
-    display: block;
+    display: block !important;
+      position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 1rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 5;
     /* z-index: 99999; */
   }
   .hamburger__close {
